@@ -104,11 +104,5 @@ public class Main{
         System.out.println("Telefono: " + trabajador1.getTelefono());
         System.out.println("Salario: " + trabajador1.getSalario() + "€");
 
-
-
-
-
-
     }
-
 }
