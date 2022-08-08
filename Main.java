@@ -1,5 +1,57 @@
-import java.util.Locale;
 import java.util.Scanner;
+
+class Persona{
+
+    private String nombre;
+    private int edad;
+    private int telefono;
+
+    public void setNombre(String _nombre){
+        nombre = _nombre;
+    }
+    public String getNombre(){
+        return nombre;
+    }
+
+    public void setEdad(int _edad){
+        edad = _edad;
+    }
+    public int getEdad(){
+        return edad;
+    }
+
+    public void setTelefono(int _telefono){
+        telefono = _telefono;
+    }
+    public int getTelefono(){
+        return telefono;
+    }
+}
+
+class Cliente extends Persona{
+
+    private float credito;
+
+    public void setCredito(float _credito) {
+        credito = _credito;
+    }
+    public float getCredito() {
+        return credito;
+    }
+}
+
+class Trabajador extends Persona{
+
+    private float salario;
+
+    public void setSalario(float _salario) {
+        salario = _salario;
+    }
+    public float getSalario() {
+        return salario;
+    }
+}
+
 
 public class Main{
 
@@ -7,97 +59,55 @@ public class Main{
 
         Scanner scan = new Scanner(System.in);
 
-        int numeroIf;
-        int numeroWhile = 0;
-        int numeroDoWhile = 0;
-        String estacion;
+        //Creamos un cliente, introducimos los datos y los imprimimos por pantalla
 
-        System.out.println("\t\t##### EJERCICIOS TEMA 4 #####\n\n");
+        Cliente cliente1 = new Cliente();
 
+        System.out.print("Introduce el nombre del cliente: ");
+        cliente1.setNombre(scan.nextLine());
+        System.out.print("Introduce la edad de " + cliente1.getNombre() + ": ");
+        cliente1.setEdad(scan.nextInt());
+        System.out.print("Introduce el telefono de " + cliente1.getNombre() + ": ");
+        cliente1.setTelefono(scan.nextInt());
+        System.out.print("Introduce el credito de " + cliente1.getNombre() + ": ");
+        cliente1.setCredito(scan.nextFloat());
 
-        //Ejercicio condicional if
+        System.out.println("\nLos datos del cliente introducido son:");
+        System.out.println("Nombre: " + cliente1.getNombre());
+        System.out.println("Edad: " + cliente1.getEdad() + " años");
+        System.out.println("Telefono: " + cliente1.getTelefono());
+        System.out.println("Credito: " + cliente1.getCredito() + "€");
 
-        System.out.println("\t\t-- EJERCICIO CONDICIONAL IF --\n");
+        //Introducimos espacios ara separar la entrada y la imprimicion de datos de los 2 objetos,
+        // y añadimos un scan.nextLine para limpiar buffer del objeto Scanner.
 
-        System.out.print("Introduce un número entero para ejecutar el condicional if: ");
-        numeroIf = scan.nextInt();
-
-
-        if(numeroIf > 0){
-            System.out.println("El número introducido es POSITIVO.");
-        }
-        else if(numeroIf < 0){
-            System.out.println("El número introducido es NEGATIVO.");
-        }
-        else{
-            System.out.println("El número introducido es 0.");
-        }
-
-        System.out.println("\n\n");
+        System.out.println("\n\n\n");
+        scan.nextLine();
 
 
-        //Ejercicio bucle while
+        //Creamos un Trabajador, introducimos los datos y los imprimimos por pantalla
 
-        System.out.println("\t\t  -- EJERCICIO BUCLE WHILE --\n");
+        Trabajador trabajador1 = new Trabajador();
 
-        while(numeroWhile < 3){
-            System.out.println("El valor de la variable numeroWhile es: " + numeroWhile);
-            numeroWhile++;
-        }
+        System.out.print("Introduce el nombre del trabajador: ");
+        trabajador1.setNombre(scan.nextLine());
+        System.out.print("Introduce la edad de "+ trabajador1.getNombre() + ": ");
+        trabajador1.setEdad(scan.nextInt());
+        System.out.print("Introduce el telefono de " + trabajador1.getNombre() + ": ");
+        trabajador1.setTelefono(scan.nextInt());
+        System.out.print("Introduce el salario de " + trabajador1.getNombre() + ": ");
+        trabajador1.setSalario(scan.nextFloat());
 
-        System.out.println("\n\n");
-
-
-        //Ejercicio bucle do while
-
-        System.out.println("\t\t -- EJERCICIO BUCLE DO WHILE --\n");
-
-        do{
-            System.out.println("El valor de la variable numeroDoWhile es: " + numeroDoWhile);
-            numeroDoWhile++;
-        }while(numeroDoWhile < 1);
-
-        System.out.println("\n\n");
+        System.out.println("\nLod datos del trabajador introducido son:");
+        System.out.println("Nombre: " + trabajador1.getNombre());
+        System.out.println("Edad: " + trabajador1.getEdad() + " años");
+        System.out.println("Telefono: " + trabajador1.getTelefono());
+        System.out.println("Salario: " + trabajador1.getSalario() + "€");
 
 
-        //Ejercicio bucle for
-
-        System.out.println("\t\t    -- EJERCICIO BUCLE FOR --\n");
-
-        for(int numeroFor = 0; numeroFor <= 3; numeroFor++){
-            System.out.println("El valor de la variable numeroFor es: " + numeroFor);
-        }
-
-        System.out.println("\n\n");
 
 
-        //Ejercicio condicional switch
 
-        System.out.println("\t\t-- EJERCICIO CONDICIONAL SWITCH --\n");
-
-        System.out.print("Introduce una estacion del año: ");
-        estacion = scan.next();
-
-        switch(estacion.toLowerCase()){
-            case "primavera":
-                System.out.println("Es Primavera.");
-                break;
-
-            case "verano":
-                System.out.println("Es Verano.");
-                break;
-
-            case "otoño":
-                System.out.println("Es otoño.");
-                break;
-
-            case "invierno":
-                System.out.println("Es Invierno.");
-                break;
-
-            default:
-                System.out.println("El valor de introducido no es una estacion del año.");
-        }
 
     }
 
